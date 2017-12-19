@@ -1,0 +1,18 @@
+
+<h1>Attraction Information</h1>
+
+<p>
+  Name:<%= @attraction.name %><br>
+  Tickets: <%= @attraction.tickets %><br>
+  Nausea Rating: <%= @attraction.nausea_rating %><br>
+  Happiness Rating: <%= @attraction.happiness_rating %><br>
+  Minimum Height: <%= @attraction.min_height %>
+</p>
+
+
+
+<% if @user.admin %>
+  <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %>
+<% else %>
+  <%= button_to "Go on this ride", ride_path, method: :get, params: {:attraction_id => @attraction.id, :user_id => @user.id} %>
+<% end %>
