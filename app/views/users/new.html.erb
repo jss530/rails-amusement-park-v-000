@@ -3,7 +3,7 @@
 <%= form_for @user do |f| %>
     <div class="field">
         <%= f.label 'user[name]' %> <br>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, id: 'user[name]' %>
     </div>
     <div class="field">
         <%= f.label :password %> <br>

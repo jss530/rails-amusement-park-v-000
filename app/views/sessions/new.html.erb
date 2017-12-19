@@ -1,7 +1,11 @@
-<%= form_tag sessions_path do %>
-   <%= label_tag :name %>
-   <%= text_field_tag 'name' %>
-   <%= label_tag :password %>
-   <%= text_field_tag 'password' %>
+<%= form_for @user, url: ({controller: 'sessions', action: 'create', method: 'post'}) do |f| %>
+  <div class="field">
+      <%= f.label 'Name:' %> <br>
+      <%= f.text_field :name, id: 'user[name]' %>
+  </div>
+  <div class="field">
+      <%= f.label 'Password:' %> <br>
+      <%= f.text_field :password, id: 'user[password]' %>
+  </div>
    <%= submit_tag "Sign In" %>
  <% end %>
